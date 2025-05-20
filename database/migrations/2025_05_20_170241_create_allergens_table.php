@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('foods', function (Blueprint $table) {
+        Schema::create('allergens', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_food_categories');
-            $table->unsignedBigInteger('id_product');
-            $table->boolean('is_spicy')->default(false);
-            $table->boolean('is_vegetarian')->default(false);
+            $table->string('name', 50); //nome allergene
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('foods');
+        Schema::dropIfExists('allergens');
     }
 };

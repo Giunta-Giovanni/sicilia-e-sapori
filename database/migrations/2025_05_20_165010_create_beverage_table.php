@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('beverage', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('id_beverage_category'); //id categoria bevande
-            $table->integer('id_product'); //id prodotto
+            $table->unsignedBigInteger('id_beverage_categories'); //id categoria bevande
+            $table->unsignedBigInteger('id_product'); //id prodotto
             $table->boolean('is_alcholic')->default(false); //è alcolico?
             $table->decimal('alcohol_Percentage', 4, 1)->nullable(); //percentuale alcolica
             $table->decimal('primary_volume', 3, 0); //dimensioni primarie
@@ -22,8 +22,7 @@ return new class extends Migration
             $table->timestamps();
 
             // foreign key
-            $table->foreign('id_product')->references('id')->on('products');
-            $table->foreign('id_food_categories')->references('id')->on('food_categories');
+
         });
     }
 

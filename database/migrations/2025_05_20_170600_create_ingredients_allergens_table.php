@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('foods', function (Blueprint $table) {
+        Schema::create('ingredients_allergens', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_food_categories');
-            $table->unsignedBigInteger('id_product');
-            $table->boolean('is_spicy')->default(false);
-            $table->boolean('is_vegetarian')->default(false);
+            $table->unsignedBigInteger('id_ingredient'); //id ingrediente
+            $table->unsignedBigInteger('id_allergen'); //id allergene
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('foods');
+        Schema::dropIfExists('ingredients_allergens');
     }
 };
