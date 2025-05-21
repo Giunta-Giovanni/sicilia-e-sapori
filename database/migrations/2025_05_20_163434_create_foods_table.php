@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('foods', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_food_categories');
+            $table->unsignedBigInteger('id_food_category');
             $table->unsignedBigInteger('id_product');
             $table->boolean('is_spicy')->default(false);
             $table->boolean('is_vegetarian')->default(false);

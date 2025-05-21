@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('ingredients_allergens', function (Blueprint $table) {
             // Add Foreign key
-            $table->foreign('id_ingredient')->references('id')->on('products');
+            $table->foreign('id_ingredient')->references('id')->on('ingredients');
             $table->foreign('id_allergen')->references('id')->on('allergens');
         });
     }

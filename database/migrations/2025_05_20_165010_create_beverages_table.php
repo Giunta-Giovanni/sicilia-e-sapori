@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('beverage', function (Blueprint $table) {
+        Schema::create('beverages', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_beverage_categories'); //id categoria bevande
+            $table->unsignedBigInteger('id_beverage_category'); //id categoria bevande
             $table->unsignedBigInteger('id_product'); //id prodotto
             $table->boolean('is_alcholic')->default(false); //è alcolico?
-            $table->decimal('alcohol_Percentage', 4, 1)->nullable(); //percentuale alcolica
-            $table->decimal('primary_volume', 3, 0); //dimensioni primarie
-            $table->decimal('secondary_volume', 3, 0)->nullable(); //dimensioni primarie
+            $table->decimal('alcohol_volume', 4, 1)->nullable(); //percentuale alcolica
+            $table->decimal('primary_size', 3, 0); //dimensioni primarie
+            $table->decimal('secondary_size', 3, 0)->nullable(); //dimensioni primarie
             $table->timestamps();
 
             // foreign key
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('beverage');
+        Schema::dropIfExists('beverages');
     }
 };
