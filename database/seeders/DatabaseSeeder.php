@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
         $this->call(BeveragesSeeder::class);
 
         $this->call(ProductsSeeder::class);
+
+        
     }
 }
 

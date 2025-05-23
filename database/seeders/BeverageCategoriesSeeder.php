@@ -13,7 +13,7 @@ class BeverageCategoriesSeeder extends Seeder
      */
     public function run(): void
     {
-        $beverage_categories = ['cocktail', 'birre', 'vini rossi', 'vini bianchi', 'soft drinks'];
+        $beverage_categories = config('data.beverage_categories');
 
         foreach ($beverage_categories as $category) {
 

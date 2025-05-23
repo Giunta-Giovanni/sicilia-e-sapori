@@ -16,15 +16,7 @@ class ProductsSeeder extends Seeder
      */
     public function run(): void
     {
-        $products = [
-            [1, null],
-            [2, null],
-            [3, null],
-            [null, 1],
-            [null, 2],
-            [null, 3],
-
-        ];
+        $products = config('data.products');
 
         foreach ($products as $product) {
 

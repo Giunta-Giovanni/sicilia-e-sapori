@@ -1,0 +1,42 @@
+<?php
+return [
+    [
+        'id_beverage_category' => 5,
+        'name_it' => 'Coca-Cola',
+        'name_eng' => 'Coca-Cola',
+        'description_it' => 'Bibita gassata classica da 33cl',
+        'description_eng' => 'Classic fizzy drink 33cl',
+        'primary_price' => 2.00,
+        'secondary_price' => 1.50,
+        'is_alcholic' => 0,
+        'alcohol_volume' => 0,
+        'primary_size' => 330,
+        'secondary_size' => 660,
+    ],
+    [
+        'id_beverage_category' => 5,
+        'name_it' => 'Acqua Naturale',
+        'name_eng' => 'Still Water',
+        'description_it' => 'Bottiglia di acqua naturale 50cl',
+        'description_eng' => 'Still water bottle 50cl',
+        'primary_price' => 1.00,
+        'secondary_price' => 0.80,
+        'is_alcholic' => 0,
+        'alcohol_volume' => 0,
+        'primary_size' => 500,
+        'secondary_size' => 1000,
+    ],
+    [
+        'id_beverage_category' => 5,
+        'name_it' => 'Acqua Frizzante',
+        'name_eng' => 'Sparkling Water',
+        'description_it' => 'Bottiglia di acqua frizzante 50cl',
+        'description_eng' => 'Sparkling water bottle 50cl',
+        'primary_price' => 1.00,
+        'secondary_price' => 0.80,
+        'is_alcholic' => 0,
+        'alcohol_volume' => 0,
+        'primary_size' => 500,
+        'secondary_size' => 1000,
+    ]
+];
