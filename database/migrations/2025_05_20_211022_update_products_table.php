@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('beverages', function (Blueprint $table) {
+        Schema::table('products', function (Blueprint $table) {
             // Aggiungiamo le foreign
-            $table->foreign('id_beverage_category')->references('id')->on('beverage_categories');
+            $table->foreign('id_food')->references('id')->on('foods');
+            $table->foreign('id_beverage')->references('id')->on('beverages');
         });
     }
 
@@ -22,9 +23,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('beverages', function (Blueprint $table) {
+        Schema::table('products', function (Blueprint $table) {
             // rimuoviamo le foreign key
-            $table->dropForeign(['id_beverage_category']);
+            $table->dropForeign(['id_food']);
+            $table->dropForeign(['id_beverage']);
         });
     }
 };
