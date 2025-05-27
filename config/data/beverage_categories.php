@@ -1,9 +1,10 @@
 <?php
 // Categorie di bevande
 return [
-    'cocktail',
-    'birre',
-    'vini rossi',
-    'vini bianchi',
-    'soft drinks'
+    'cocktail',             //1
+    'birre',                //2
+    'vini bianchi',         //3
+    'vini frizzanti',       //4
+    'vini rossi',           //5
+    'soft drinks'           //6
 ];
