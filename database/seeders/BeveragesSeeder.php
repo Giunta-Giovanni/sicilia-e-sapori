@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Beverage;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class BeveragesSeeder extends Seeder
@@ -15,26 +14,29 @@ class BeveragesSeeder extends Seeder
     {
         $beverages = config('data.beverages');
 
-        // creiamo un istanza bevande
+        foreach ($beverages as $beverageSections) {
+            foreach ($beverageSections as $beverage) {
 
-        foreach ($beverages as $beverage) {
-            $newBeverage = new Beverage();
+                // controllo per vedere se l'istanza è gia stata inserita
+                $newBeverage = Beverage::firstOrNew([
+                    'name_it' => $beverage['name_it'],
+                    'id_beverage_category' => $beverage['id_beverage_category'],
+                ]);
 
-            $newBeverage->id_beverage_category = $beverage['id_beverage_category'];
-            $newBeverage->name_it = $beverage['name_it'];
-            $newBeverage->name_eng = $beverage['name_eng'];
-            $newBeverage->description_it = $beverage['description_it'];
-            $newBeverage->description_eng = $beverage['description_eng'];
-            $newBeverage->primary_price = $beverage['primary_price'];
-            $newBeverage->secondary_price = $beverage['secondary_price'];
-            $newBeverage->is_alcholic = $beverage['is_alcholic'];
-            $newBeverage->alcohol_volume = $beverage['alcohol_volume'];
-            $newBeverage->primary_size = $beverage['primary_size'];
-            $newBeverage->secondary_size = $beverage['secondary_size'];
+                // aggiorniamo o impostiamo gli altri campi
+                $newBeverage->name_eng = $beverage['name_eng'];
+                $newBeverage->description_it = $beverage['description_it'];
+                $newBeverage->description_eng = $beverage['description_eng'];
+                $newBeverage->primary_price = $beverage['primary_price'];
+                $newBeverage->secondary_price = $beverage['secondary_price'];
+                $newBeverage->is_alcholic = $beverage['is_alcholic'];
+                $newBeverage->alcohol_volume = $beverage['alcohol_volume'];
+                $newBeverage->primary_size = $beverage['primary_size'];
+                $newBeverage->secondary_size = $beverage['secondary_size'];
 
-            $newBeverage->save();
+                // salviamo l'istanza (nuova o aggiornata)
+                $newBeverage->save();
+            }
         }
-
-        // salviamo l'istanza bevande
     }
 }

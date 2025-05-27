@@ -1,42 +1,28 @@
 <?php
-return [
-    [
-        'id_beverage_category' => 5,
-        'name_it' => 'Coca-Cola',
-        'name_eng' => 'Coca-Cola',
-        'description_it' => 'Bibita gassata classica da 33cl',
-        'description_eng' => 'Classic fizzy drink 33cl',
-        'primary_price' => 2.00,
-        'secondary_price' => 1.50,
-        'is_alcholic' => 0,
-        'alcohol_volume' => 0,
-        'primary_size' => 330,
-        'secondary_size' => 660,
-    ],
-    [
-        'id_beverage_category' => 5,
-        'name_it' => 'Acqua Naturale',
-        'name_eng' => 'Still Water',
-        'description_it' => 'Bottiglia di acqua naturale 50cl',
-        'description_eng' => 'Still water bottle 50cl',
-        'primary_price' => 1.00,
-        'secondary_price' => 0.80,
-        'is_alcholic' => 0,
-        'alcohol_volume' => 0,
-        'primary_size' => 500,
-        'secondary_size' => 1000,
-    ],
-    [
-        'id_beverage_category' => 5,
-        'name_it' => 'Acqua Frizzante',
-        'name_eng' => 'Sparkling Water',
-        'description_it' => 'Bottiglia di acqua frizzante 50cl',
-        'description_eng' => 'Sparkling water bottle 50cl',
-        'primary_price' => 1.00,
-        'secondary_price' => 0.80,
-        'is_alcholic' => 0,
-        'alcohol_volume' => 0,
-        'primary_size' => 500,
-        'secondary_size' => 1000,
-    ]
-];
+$directory = __DIR__ . '/beverages';
+$files = glob($directory . '/*.php');
+
+// Inizializza l'array associativo
+$beverages = [];
+
+// Per ogni file nella cartella
+foreach ($files as $file) {
+    // Escludi il file corrente (per evitare ricorsione)
+    if ($file === __FILE__) {
+        continue;
+    }
+    // Includi il file e ottieni il suo array
+    $beveragesSection = include $file;
+    // Se è un array, uniscilo all'array principale
+    if (is_array($beveragesSection)) {
+        // Usa il nome del file (senza estensione) come chiave
+        $key = basename($file, '.php');
+        $beverages[$key] = $beveragesSection;
+    }
+}
+
+$beveragesArray = [];
+foreach ($beverages as $beverage) {
+    $beveragesArray = array_merge($beveragesArray, $beverage);
+};
+return [$beveragesArray];
