@@ -21,9 +21,10 @@ foreach ($files as $file) {
     }
 }
 
-$items = [];
+$foodsArray = [];
 foreach ($foods as $food) {
-    $items = array_merge($items, $food);
+    $foodsArray = array_merge($foodsArray, $food);
 };
+
 // Ora $foods contiene tutti i dati dei file come array associativo
-return [$items];
+return [$foodsArray];
