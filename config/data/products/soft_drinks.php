@@ -1,0 +1,76 @@
+<?php
+$softdrink_category = 18;
+return [
+    [
+        'category_id' => $softdrink_category,
+        'name_it' => 'Acqua Naturale',
+        'name_eng' => 'Still Water',
+        'description_it' => 'Bottiglia di acqua naturale',
+        'description_eng' => 'Still water bottle',
+        'primary_price' => 1.50,
+        'secondary_price' => 2.50
+    ],
+    [
+        'category_id' => $softdrink_category,
+        'name_it' => 'Acqua Frizzante',
+        'name_eng' => 'Sparkling Water',
+        'description_it' => 'Bottiglia di acqua frizzante',
+        'description_eng' => 'Sparkling water bottle',
+        'primary_price' => 1.50,
+        'secondary_price' => 2.50
+    ],
+    [
+        'category_id' => $softdrink_category,
+        'name_it' => 'Coca Cola',
+        'name_eng' => null,
+        'description_it' => 'Coca Cola',
+        'description_eng' => 'Coca Cola',
+        'primary_price' => 3.00,
+        'secondary_price' => 4.50,
+    ],
+    [
+        'category_id' => $softdrink_category,
+        'name_it' => 'Fanta',
+        'name_eng' => 'Fanta',
+        'description_it' => 'Lattina di Fanta',
+        'description_eng' => 'Fanta can',
+        'primary_price' => 3.00,
+        'secondary_price' => null,
+    ],
+    [
+        'category_id' => $softdrink_category,
+        'name_it' => 'Sprite',
+        'name_eng' => 'Sprite',
+        'description_it' => 'Lattina di Sprite',
+        'description_eng' => 'Sprite can',
+        'primary_price' => 3.00,
+        'secondary_price' => null,
+    ],
+    [
+        'category_id' => $softdrink_category,
+        'name_it' => 'Caffè Espresso',
+        'name_eng' => 'Espresso Coffee',
+        'description_it' => 'Caffè espresso singolo',
+        'description_eng' => 'Single shot espresso',
+        'primary_price' => 1.50,
+        'secondary_price' => null,
+    ],
+    [
+        'category_id' => $softdrink_category,
+        'name_it' => 'Caffè Decaffeinato',
+        'name_eng' => 'Decaffeinated Coffee',
+        'description_it' => 'Espresso decaffeinato',
+        'description_eng' => 'Decaf espresso',
+        'primary_price' => 1.50,
+        'secondary_price' => null,
+    ],
+    [
+        'category_id' => $softdrink_category,
+        'name_it' => 'Caffè Lungo',
+        'name_eng' => 'Long Coffee',
+        'description_it' => 'Caffè espresso allungato con più acqua',
+        'description_eng' => 'Espresso coffee with extra water',
+        'primary_price' => 1.50,
+        'secondary_price' => null,
+    ],
+];
