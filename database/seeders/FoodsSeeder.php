@@ -18,15 +18,9 @@ class FoodsSeeder extends Seeder
             foreach ($foodsections as $food) {
                 // controllo per vedere se l'istanza è gia stata inserita
                 $newFood = Food::firstOrNew([
-                    'name_it' => $food['name_it'],
-                    'id_food_category' => $food['id_food_category'],
+                    'food_id' => $food['food_id'],
                 ]);
 
-                $newFood->name_eng = $food['name_eng'];
-                $newFood->description_it = $food['description_it'];
-                $newFood->description_eng = $food['description_eng'];
-                $newFood->primary_price = $food['primary_price'] === null ? 0 : $food['primary_price'];
-                $newFood->secondary_price = $food['secondary_price'];
                 $newFood->is_spicy = $food['is_spicy'];
                 $newFood->is_vegetarian = $food['is_vegetarian'];
 

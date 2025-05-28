@@ -6,11 +6,8 @@ use App\Models\Product;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-
-
 class ProductsSeeder extends Seeder
 {
-
     /**
      * Run the database seeds.
      */
@@ -18,14 +15,23 @@ class ProductsSeeder extends Seeder
     {
         $products = config('data.products');
 
-        foreach ($products as $product) {
+        foreach ($products as $productSections) {
+            foreach ($productSections as $product) {
 
-            $newProduct = new Product();
+                $newProduct = Product::firstOrNew([
+                    'name_it' => $product['name_it'],
+                    'category_id' => $product['category_id'],
+                ]);
 
-            $newProduct->id_food = $product[0];
-            $newProduct->id_beverage = $product[1];
+                // aggiorniamo o impostiamo gli altri campi
+                $newProduct->name_eng = $product['name_eng'];
+                $newProduct->description_it = $product['description_it'];
+                $newProduct->description_eng = $product['description_eng'];
+                $newProduct->primary_price = $product['primary_price'] === null ? 0 : $product['primary_price'];;
+                $newProduct->secondary_price = $product['secondary_price'];
 
-            $newProduct->save();
+                $newProduct->save();
+            }
         }
     }
 }
