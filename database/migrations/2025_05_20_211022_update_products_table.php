@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             // Aggiungiamo le foreign
-            $table->foreign('id_food')->references('id')->on('foods');
-            $table->foreign('id_beverage')->references('id')->on('beverages');
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
@@ -25,8 +24,7 @@ return new class extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             // rimuoviamo le foreign key
-            $table->dropForeign(['id_food']);
-            $table->dropForeign(['id_beverage']);
+            $table->dropForeign(['category_id']);
         });
     }
 };

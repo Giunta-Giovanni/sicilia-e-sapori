@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('foods', function (Blueprint $table) {
             // foreign key
-            $table->foreign('id_food_category')->references('id')->on('food_categories');
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 
@@ -24,7 +24,7 @@ return new class extends Migration
     {
         Schema::table('foods', function (Blueprint $table) {
             // prima rimuovi le foreign key
-            $table->dropForeign(['id_food_category']);
+            $table->dropForeign(['product_id']);
         });
     }
 };

@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('allergens', function (Blueprint $table) {
             $table->id();
+
             $table->string('name', 50); //nome allergene
+
             $table->timestamps();
         });
     }

@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('food_categories', function (Blueprint $table) {
+        Schema::create('products_allergens', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50); //nome categoria
+
+            $table->unsignedBigInteger('product_id'); //id prodotto
+            $table->unsignedBigInteger('allergen_id')->nullable(); //id ingrediente
+
             $table->timestamps();
         });
     }
@@ -23,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('food_categories');
+        Schema::dropIfExists('products_allergens');
     }
 };
