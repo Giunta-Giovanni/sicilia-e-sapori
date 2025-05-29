@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('foods', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('product_id');
+            $table->foreignId('product_id')->constrained();
 
             // diversi alla tabella beverages
             $table->boolean('is_spicy')->default(false);

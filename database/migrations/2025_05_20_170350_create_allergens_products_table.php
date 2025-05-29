@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('products', function (Blueprint $table) {
-            // Aggiungiamo le foreign
-            $table->foreign('category_id')->references('id')->on('categories');
+        Schema::create('allergens_products', function (Blueprint $table) {
+            $table->id();
+
+            $table->foreignId('allergen_id')->constrained(); //id ingrediente
+            $table->foreignId('product_id')->constrained(); //id prodotto
+
+            $table->timestamps();
         });
     }
 
@@ -22,9 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('products', function (Blueprint $table) {
-            // rimuoviamo le foreign key
-            $table->dropForeign(['category_id']);
-        });
+        Schema::dropIfExists('allergens_products');
     }
 };

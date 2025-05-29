@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             // prodotto
-            $table->unsignedBigInteger('product_id');
+            $table->foreignId('product_id')->constrained();
 
             // diversi alla tabella foods
             $table->boolean('is_alcholic')->default(false); //è alcolico?
