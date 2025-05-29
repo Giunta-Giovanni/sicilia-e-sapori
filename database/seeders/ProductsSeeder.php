@@ -31,6 +31,11 @@ class ProductsSeeder extends Seeder
                 $newProduct->secondary_price = $product['secondary_price'];
 
                 $newProduct->save();
+
+                // ricaviamoci il nuovo id 
+
+                // se cattegory_id e compresa tra i numeri 1 e 12 allora creami il prodotto food
+                // altrimenti creami il prodotto beverage
             }
         }
     }
