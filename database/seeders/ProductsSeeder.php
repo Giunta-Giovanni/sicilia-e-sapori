@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Beverage;
+use App\Models\Food;
 use App\Models\Product;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -32,7 +34,29 @@ class ProductsSeeder extends Seeder
 
                 $newProduct->save();
 
-                // ricaviamoci il nuovo id 
+                if ($product['type'] === "food") {
+                    // ricaviamoci il nuovo id 
+                    $newfood = new Food();
+
+                    $newfood->product_id = $newProduct->id;
+                    $newfood->is_spicy = $product['is_spicy'];
+                    $newfood->is_vegetarian = $product['is_vegetarian'];
+
+                    $newfood->save();
+                } elseif ($product['type'] === "drink") {
+
+                    $newBeverage = new Beverage();
+
+                    $newBeverage->product_id = $newProduct->id;
+                    $newBeverage->is_alcholic = $product['is_alcholic'];
+                    $newBeverage->alcohol_volume = $product['alcohol_volume'];
+                    $newBeverage->primary_size = $product['primary_size'];
+                    $newBeverage->secondary_size = $product['secondary_size'];
+
+                    $newBeverage->save();
+                }
+
+
 
                 // se cattegory_id e compresa tra i numeri 1 e 12 allora creami il prodotto food
                 // altrimenti creami il prodotto beverage

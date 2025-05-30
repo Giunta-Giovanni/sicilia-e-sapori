@@ -1,49 +1,76 @@
 <?php
-$beer_category = 14;
+
+$categoryId = 14;
+
 return [
     [
-        'category_id' => $beer_category,
-        'name_it' => 'Birra spina Poretti 4 luppoli (bionda)',
-        'name_eng' => 'Draught Beer Poretti 4 hops (blonde)',
-        'description_it' => 'Birra spina Poretti 4 luppoli (bionda)',
-        'description_eng' => 'Draught beer Poretti 4 hops (blonde)',
-        'primary_price' => 3.50,
-        'secondary_price' => 5.00
+        "category_id" => $categoryId,
+        "name_it" => "Birra alla Spina - Poretti 4 Luppoli (Bionda)",
+        "name_eng" => "Draft Beer - Poretti 4 Luppoli (Blonde Ale)",
+        "description_it" => "",
+        "description_eng" => "",
+        "primary_price" => "3.50",
+        "secondary_price" => "5.00",
+        'is_alcholic' => true,
+        'alcohol_volume' => 5.5, // Typical alcohol volume for a blonde ale
+        'primary_size' => 200, // Assuming 200ml for the smaller price
+        'secondary_size' => 400, // Assuming 400ml for the larger price
+        "type" => "drink"
     ],
     [
-        'category_id' => $beer_category,
-        'name_it' => 'Birra spina Poretti 6 luppoli (rossa)',
-        'name_eng' => 'Draught Beer Poretti 6 hops (red)',
-        'description_it' => 'Birra spina Poretti 6 luppoli (rossa) 20cl',
-        'description_eng' => 'Draught beer Poretti 6 hops (red) 20cl',
-        'primary_price' => 4.00,
-        'secondary_price' => 6.00
+        "category_id" => $categoryId,
+        "name_it" => "Birra alla Spina - Poretti 6 Luppoli (Rossa)",
+        "name_eng" => "Draft Beer - Poretti 6 Luppoli (Red Ale)",
+        "description_it" => "",
+        "description_eng" => "",
+        "primary_price" => "4.00",
+        "secondary_price" => "6.00",
+        'is_alcholic' => true,
+        'alcohol_volume' => 6.5, // Typical alcohol volume for a red ale
+        'primary_size' => 200, // Assuming 200ml for the smaller price
+        'secondary_size' => 400, // Assuming 400ml for the larger price
+        "type" => "drink"
     ],
     [
-        'category_id' => $beer_category,
-        'name_it' => 'Birra Moretti',
-        'name_eng' => 'Moretti Beer',
-        'description_it' => 'Birra Moretti 66cl',
-        'description_eng' => 'Moretti beer 66cl',
-        'primary_price' => 6.00,
-        'secondary_price' => null,
+        "category_id" => $categoryId,
+        "name_it" => "Birra Moretti",
+        "name_eng" => "Moretti Beer",
+        "description_it" => "66 cl",
+        "description_eng" => "66 cl",
+        "primary_price" => "6.00",
+        "secondary_price" => null,
+        'is_alcholic' => true,
+        'alcohol_volume' => 4.6, // Standard alcohol volume for Birra Moretti
+        'primary_size' => 660, // 66 cl = 660 ml
+        'secondary_size' => null,
+        "type" => "drink"
     ],
     [
-        'category_id' => $beer_category,
-        'name_it' => 'Semedorato',
-        'name_eng' => 'Semedorato Beer',
-        'description_it' => 'Birra Semedorato 66cl',
-        'description_eng' => 'Semedorato beer 66cl',
-        'primary_price' => 6.00,
-        'secondary_price' => null,
+        "category_id" => $categoryId,
+        "name_it" => "Birra Semedorato",
+        "name_eng" => "Semedorato Beer",
+        "description_it" => "66 cl",
+        "description_eng" => "66 cl",
+        "primary_price" => "6.00",
+        "secondary_price" => null,
+        'is_alcholic' => true,
+        'alcohol_volume' => 4.7, // Typical alcohol volume for Semedorato (standard lager)
+        'primary_size' => 660, // 66 cl = 660 ml
+        'secondary_size' => null,
+        "type" => "drink"
     ],
     [
-        'category_id' => $beer_category,
-        'name_it' => 'Birra Bac artigianale pozzallese',
-        'name_eng' => 'Bac artisanal beer from Pozzallo',
-        'description_it' => 'Birra Bac artigianale pozzallese 33cl',
-        'description_eng' => 'Bac artisanal beer from Pozzallo 33cl',
-        'primary_price' => 6.00,
-        'secondary_price' => null,
+        "category_id" => $categoryId,
+        "name_it" => "Birra Artigianale BAC di Pozzallo",
+        "name_eng" => "BAC Craft Beer from Pozzallo",
+        "description_it" => "33 cl",
+        "description_eng" => "33 cl",
+        "primary_price" => "6.00",
+        "secondary_price" => null,
+        'is_alcholic' => true,
+        'alcohol_volume' => 5.0, // Common alcohol volume for craft beers if not specified
+        'primary_size' => 330, // 33 cl = 330 ml
+        'secondary_size' => null,
+        "type" => "drink"
     ]
 ];
